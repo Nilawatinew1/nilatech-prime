@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Shop - Katalog UMKM</title>
+    <style>
+        /* CSS untuk mempercantik tampilan */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Membuat layout kotak-kotak (Grid) */
+        .katalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Biar gambar gak penyet */
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .harga {
+            color: #e67e22;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .btn-ig {
+            display: block;
+            text-align: center;
+            background-color: #e1306c; /* Warna Khas Instagram */
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .btn-ig:hover {
+            background-color: #b02555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>NilaTech.Prime </h1>
+    <p>Membawa Teknologi Terkini ke Genggaman Anda.</p>
+</header>
+
+<div class="container">
+    <div class="katalog-grid">
+        
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=500" alt="Smartphone A">
+            <div class="card-content">
+                <h3>Flagship Phone X</h3>
+                <p>Layar AMOLED 120Hz, Chipset kencang buat gaming.</p>
+                <p class="harga">Rp 12.500.000</p>
+                <a href="https://instagram.com" class="btn-ig">Cek di Instagram</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=500" alt="Smartphone B">
+            <div class="card-content">
+                <h3>Mid-Range Pro</h3>
+                <p>Kamera 108MP, baterai awet 2 hari pemakaian.</p>
+                <p class="harga">Rp 4.200.000</p>
+                <a href="https://instagram.com" class="btn-ig">Cek di Instagram</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=500" alt="Smartphone C">
+            <div class="card-content">
+                <h3>Entry Level Mate</h3>
+                <p>Cocok untuk sekolah online dan harian.</p>
+                <p class="harga">Rp 1.800.000</p>
+                <a href="https://instagram.com" class="btn-ig">Cek di Instagram</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
