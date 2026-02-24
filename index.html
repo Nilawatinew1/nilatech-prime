@@ -71,14 +71,15 @@
         }
 
         .nav-categories {
-            background: #1e293b;
-            color: #94a3b8;
-            padding: 12px;
-            text-align: center;
-            font-size: 14px;
-            border-bottom: 1px solid #334155;
+            <div class="nav-categories">
+                <span onclick="filterKategori('all')" style="cursor:pointer">All</span> &nbsp; | &nbsp;
+                <span onclick="filterKategori('smartphone')" style="cursor:pointer">Smartphone</span> &nbsp; | &nbsp;
+                <span onclick="filterKategori('tablet')" style="cursor:pointer">Tablet</span> &nbsp; | &nbsp;
+                <span onclick="filterKategori('laptop')" style="cursor:pointer">Laptop</span> &nbsp; | &nbsp;
+                <span onclick="filterKategori('accessories')" style="cursor:pointer">Accessories</span> &nbsp; | &nbsp;
+                <span onclick="filterKategori('audio')" style="cursor:pointer">Audio</span>
+            </div>
         }
-        /* --- KODE BARU SELESAI --- */
 
         .container {
             max-width: 1000px;
@@ -173,6 +174,22 @@ document.getElementById("searchInput").addEventListener("keyup", function(event)
         cariProduk();
     }
 });
+function filterKategori(kategori) {
+    let kartu = document.getElementsByClassName('card');
+
+    for (let i = 0; i < kartu.length; i++) {
+        // Ambil label kategori dari masing-masing kartu
+        let kategoriProduk = kartu[i].getAttribute('data-category');
+
+        // Jika pilih 'all', tampilkan semua. 
+        // Jika tidak, tampilkan hanya yang kategorinya cocok.
+        if (kategori === 'all' || kategoriProduk === kategori) {
+            kartu[i].style.display = "";
+        } else {
+            kartu[i].style.display = "none";
+        }
+    }
+}
 </script>
 <body>
 
@@ -199,6 +216,7 @@ document.getElementById("searchInput").addEventListener("keyup", function(event)
                 <p>Chipset MediaTek Dimensity 7500 5G dengan Fitur Game Space</p>
                 <p class="harga">Rp 4.999.000</p>
                 <a href="https://www.instagram.com/_nilawtt?utm_source=qr&igsh=ZDJra2NlMjdyY3ls" class="btn-ig">Cek Produk</a>
+                <div class="card" data-category="smartphone"></div>
             </div>
         </div>
 
@@ -209,6 +227,7 @@ document.getElementById("searchInput").addEventListener("keyup", function(event)
                 <p>Chipset Unisoc T9100 6nm 5G dengan Air Trigger</p>
                 <p class="harga">Rp 3.579.000</p>
                 <a href="https://www.instagram.com/_nilawtt?utm_source=qr&igsh=ZDJra2NlMjdyY3ls" class="btn-ig">Cek Produk</a>
+                <div class="card" data-category="smartphone"></div>
             </div>
         </div>
 
@@ -219,6 +238,7 @@ document.getElementById("searchInput").addEventListener("keyup", function(event)
                 <p>Chipset Qualcomm Snapdragon 8 Gen 3 dengan ASUS Noise Reduction Technology</p>
                 <p class="harga">Rp 14.999.000</p>
                 <a href="https://www.instagram.com/_nilawtt?utm_source=qr&igsh=ZDJra2NlMjdyY3ls" class="btn-ig">Cek Produk</a>
+                <div class="card" data-category="smartphone"></div>
             </div>
         </div>
         
@@ -229,6 +249,7 @@ document.getElementById("searchInput").addEventListener("keyup", function(event)
                 <p>Prosesor Apple M4 3-nm dengan Layar Ultra Retina XDR</p>
                 <p class="harga">Rp 16.777.000</p>
                 <a href="https://www.instagram.com/_nilawtt?utm_source=qr&igsh=ZDJra2NlMjdyY3ls" class="btn-ig">Cek Produk</a>
+                <div class="card" data-category="tablet"></div>
             </div>
         </div>
     </div>
