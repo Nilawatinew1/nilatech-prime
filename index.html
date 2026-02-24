@@ -203,6 +203,53 @@
             filter: brightness(1.2);
             box-shadow: 0 0 15px rgba(192, 132, 252, 0.6);
         }
+        /* --- JURUS KHUSUS LAYAR HP (Maksimal lebar 768px) --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Logo & Search jadi atas-bawah */
+        padding: 20px 5%;
+        gap: 15px;
+    }
+
+    .search-container {
+        width: 100%; /* Kotak search jadi lebar penuh di HP */
+    }
+
+    .nav-categories {
+        font-size: 14px; /* Kecilkan dikit biar nggak menu-menuhin layar */
+        padding: 12px 5px;
+        white-space: nowrap; /* Biar kategori bisa di-scroll ke samping */
+        overflow-x: auto;
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+    
+    .nav-categories::-webkit-scrollbar {
+        display: none; /* Sembunyikan bar scroll biar estetik */
+    }
+
+    .container {
+        margin: 15px auto;
+    }
+
+    .katalog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* 1 Kartu per baris di HP */
+        gap: 20px;
+    }
+
+    .logo {
+        font-size: 22px; /* Logo dikecilkan dikit biar nggak makan tempat */
+    }
+    
+    .card-content p {
+        font-size: 1rem; /* Ukuran YaHei-nya tetap pas di mata */
+    }
+    
+    .harga {
+        font-size: 1.4rem; /* Harga tetap tegas tapi proporsional */
+    }
+}
     </style>
 </head>
 <body>
