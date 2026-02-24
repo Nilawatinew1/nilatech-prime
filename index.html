@@ -29,17 +29,15 @@
         }
 
         .logo {
-            font-family: 'Orbitron', sans-serif; 
-            font-size: 28px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 26px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
             background: linear-gradient(to right, #22d3ee, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
         }
-
         .search-container {
             display: flex;
             align-items: center;
@@ -138,8 +136,8 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;  /* BIAR TEKS DESKRIPSI RATA TENGAH */
+            align-items: center; /* Tombol jadi di tengah */
+            text-align: center;  /* Teks deskripsi jadi di tengah */
             flex-grow: 1;
         }
 
@@ -153,10 +151,12 @@
         }
 
         .card-content p {
-            color: #e2e8f0; /* DIGANTI KE PUTIH TERANG BIAR TERBACA */
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 15px;
+            font-family: "Microsoft YaHei UI Light", "Microsoft YaHei", sans-serif; 
+            color: #e2e8f0; /* Warna putih terang agar kontras */
+            font-size: 1.05rem; /* Ukuran diperbesar sesuai permintaanmu */
+            line-height: 1.6; /* Jarak antar baris biar nggak sumpek */
+            margin-bottom: 20px;
+            font-weight: 300;
         }
 
         .harga {
@@ -168,15 +168,15 @@
         }
 
         .btn-ig {
-            background: linear-gradient(45deg, #818cf8, #c084fc);
+           background: linear-gradient(45deg, #818cf8, #c084fc);
             color: white;
             text-decoration: none;
-            padding: 10px 25px;
+            padding: 12px 30px;
             border-radius: 12px;
             font-weight: bold;
             transition: 0.3s;
-            width: fit-content; /* Biar tombol nggak melebar sehalaman */
             display: inline-block;
+            width: fit-content; /* Biar tombolnya cantik di tengah */
         }
 
         .btn-ig {
