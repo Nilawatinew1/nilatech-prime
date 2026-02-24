@@ -6,35 +6,36 @@
     <title>NilaTech Prime - Katalog Gadget Modern</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        margin: 0;
+        padding: 0;
+    
+        background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
+        color: #f8fafc;
+        min-height: 100vh;
         }
 
-        /* --- KODE BARU DIMULAI DISINI --- */
-        header {
-            background: linear-gradient(135deg, #0f172a 0%, #334155 100%); 
+        .header {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px); /* Efek kaca transparan */
             display: flex;
-            justify-content: space-between; 
+            justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            border-bottom: 3px solid #22d3ee;
-            color: white;
+            border-bottom: 2px solid #22d3ee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
-            font-size: 32px; 
+            font-size: 32px;
             font-weight: 800;
-            background: linear-gradient(to right, #22d3ee, #00f2fe); 
+    
+            background: linear-gradient(to right, #22d3ee, #818cf8);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent
-
-            letter-spacing: -1px;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            /* Menghapus paksaan huruf kapital semua */
-            text-transform: none;
-        }
+            -webkit-text-fill-color: transparent;
+            }
 
         .search-container {
             display: flex;
@@ -71,21 +72,21 @@
         }
 
         .nav-categories {
-    background: #1e293b;
-    color: #94a3b8;
-    padding: 12px;
-    text-align: center;
-    font-size: 14px;
-    border-bottom: 1px solid #334155;
-    width: 100%; 
-    display: block; 
-    clear: both;
-}
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 12px;
+            text-align: center;
+            font-size: 14px;
+            border-bottom: 1px solid #334155;
+            width: 100%; 
+            display: block; 
+            clear: both;
+        }
 
-.nav-categories span:hover {
-    color: #22d3ee;
-    text-decoration: underline;
-}
+        .nav-categories span:hover {
+            color: #22d3ee;
+            text-decoration: underline;
+        }
         .container {
             max-width: 1000px;
             margin: 20px auto;
@@ -99,12 +100,13 @@
         }
 
         .card {
-            background: white;
-            border-radius: 12px;
+            background: #1e293b; 
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-    
+    /* Border tipis transparan biru agar terlihat modern */
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
     
             display: flex;
             flex-direction: column;
@@ -112,42 +114,64 @@
         }
 
         .card:hover {
-            transform: translateY(-5px);
+    /* Efek terangkat lebih tinggi */
+            transform: translateY(-10px);
+    /* Efek glow biru elektrik saat kursor lewat */
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+            border-color: #22d3ee;
         }
 
         .card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+    /* Memberi efek sedikit gelap pada gambar agar teks di bawahnya kontras */
+            filter: brightness(0.9);
         }
 
         .card-content {
             padding: 15px;
-
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+    /* Warna teks deskripsi diubah jadi abu-abu terang agar nyaman dibaca */
+            color: #cbd5e1;
+        }
+
+/* Mengubah warna Judul HP di dalam kartu */
+        .card-content h3 {
+            color: #22d3ee; /* Warna Cyan/Biru Terang */
+            margin-top: 0;
         }
 
         .harga {
-            color: #e67e22;
+    /* Warna harga diubah jadi pink/ungu neon biar nyala di background gelap */
+            color: #f472b6; 
             font-weight: bold;
-            font-size: 1.2em;
-    
+            font-size: 1.3em;
             margin-top: auto; 
             padding-bottom: 10px;
         }
-
         .btn-ig {
-            display: block;
-            text-align: center;
-            background-color: #e1306c;
+            background: linear-gradient(45deg, #818cf8, #c084fc);
             color: white;
             text-decoration: none;
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
-            margin-top: 10px;
+            text-align: center;
             font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-ig:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 15px rgba(192, 132, 252, 0.6);
+        }
+
+        .nav-categories {
+            background: rgba(30, 41, 59, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
         }
     </style>
 </head>
