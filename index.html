@@ -145,14 +145,43 @@
         }
     </style>
 </head>
+<script>
+function cariProduk() {
+    // Ambil teks dari kolom pencarian dan jadikan huruf kecil
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    
+    // Ambil semua kartu produk
+    let kartu = document.getElementsByClassName('card');
+
+    // Loop/periksa setiap kartu
+    for (let i = 0; i < kartu.length; i++) {
+        // Ambil judul produk (h3) di dalam kartu tersebut
+        let namaProduk = kartu[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+        
+        // Jika nama produk mengandung kata yang diketik, tampilkan. Jika tidak, sembunyikan.
+        if (namaProduk.includes(input)) {
+            kartu[i].style.display = "";
+        } else {
+            kartu[i].style.display = "none";
+        }
+    }
+}
+
+// Fitur tambahan: Bisa cari hanya dengan menekan tombol "Enter" di keyboard
+document.getElementById("searchInput").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        cariProduk();
+    }
+});
+</script>
 <body>
 
 <header>
     <div class="logo">NilaTech.Prime</div>
     
     <div class="search-container">
-        <input type="text" placeholder="Cari Gadget Disini...">
-        <button class="btn-search">Cari</button>
+        <input type="text" id="searchInput" placeholder="Cari Gadget Disini...">
+        <button class="btn-search" onclick="cariProduk()">Cari</button>
     </div>
 </header>
 
@@ -198,7 +227,7 @@
             <div class="card-content">
                 <h3>iPad Pro (M4)</h3>
                 <p>Prosesor Apple M4 3-nm dengan Layar Ultra Retina XDR</p>
-                <p class="harga">Rp 16.777.000/p>
+                <p class="harga">Rp 16.777.000</p>
                 <a href="https://www.instagram.com/_nilawtt?utm_source=qr&igsh=ZDJra2NlMjdyY3ls" class="btn-ig">Cek Produk</a>
             </div>
         </div>
