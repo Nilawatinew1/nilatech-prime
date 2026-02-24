@@ -7,21 +7,21 @@
     <style>
         body {
             font-family: 'Segoe UI', Roboto, sans-serif;
-        margin: 0;
-        padding: 0;
-    
-        background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
-        color: #f8fafc;
-        min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
+            color: #f8fafc;
+            min-height: 100vh;
         }
 
-        .header {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px); /* Efek kaca transparan */
+        /* PERBAIKAN: Langsung panggil tag header tanpa titik */
+        header {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
+            padding: 15px 5%;
             border-bottom: 2px solid #22d3ee;
             position: sticky;
             top: 0;
@@ -29,22 +29,21 @@
         }
 
         .logo {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 800;
-    
             background: linear-gradient(to right, #22d3ee, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            }
+        }
 
         .search-container {
             display: flex;
             align-items: center;
             background: rgba(255, 255, 255, 0.1); 
-            padding: 5px;
+            padding: 5px 15px;
             border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            width: 350px;
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            width: 300px; /* Ukuran pas */
         }
 
         .search-container input {
@@ -52,112 +51,119 @@
             border: none;
             outline: none;
             color: white;
-            padding: 10px 20px;
+            padding: 8px;
             width: 100%;
+            font-size: 14px;
         }
 
         .btn-search {
             background: #22d3ee;
             color: #0f172a;
             border: none;
-            padding: 10px 25px;
+            padding: 8px 20px;
             border-radius: 50px;
             font-weight: bold;
             cursor: pointer;
             transition: 0.3s;
+            font-size: 13px;
         }
 
         .btn-search:hover {
             background: white;
+            box-shadow: 0 0 10px #22d3ee;
         }
 
         .nav-categories {
-            background: #1e293b;
+            background: rgba(30, 41, 59, 0.8);
             color: #94a3b8;
-            padding: 12px;
+            padding: 15px;
             text-align: center;
             font-size: 14px;
-            border-bottom: 1px solid #334155;
-            width: 100%; 
-            display: block; 
-            clear: both;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-categories span {
+            margin: 0 10px;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
         .nav-categories span:hover {
             color: #22d3ee;
-            text-decoration: underline;
+            text-shadow: 0 0 8px #22d3ee;
         }
+
         .container {
-            max-width: 1000px;
-            margin: 20px auto;
+            max-width: 1100px;
+            margin: 30px auto;
             padding: 0 20px;
         }
 
         .katalog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .card {
             background: #1e293b; 
             border-radius: 16px;
             overflow: hidden;
-    /* Border tipis transparan biru agar terlihat modern */
-            border: 1px solid rgba(34, 211, 238, 0.2);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(34, 211, 238, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
-    
             display: flex;
             flex-direction: column;
             height: 100%;
         }
 
         .card:hover {
-    /* Efek terangkat lebih tinggi */
             transform: translateY(-10px);
-    /* Efek glow biru elektrik saat kursor lewat */
-            box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+            box-shadow: 0 0 25px rgba(34, 211, 238, 0.3);
             border-color: #22d3ee;
         }
 
         .card img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
-    /* Memberi efek sedikit gelap pada gambar agar teks di bawahnya kontras */
             filter: brightness(0.9);
         }
 
         .card-content {
-            padding: 15px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
-    /* Warna teks deskripsi diubah jadi abu-abu terang agar nyaman dibaca */
-            color: #cbd5e1;
         }
 
-/* Mengubah warna Judul HP di dalam kartu */
         .card-content h3 {
-            color: #22d3ee; /* Warna Cyan/Biru Terang */
-            margin-top: 0;
+            color: #22d3ee;
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .card-content p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
         }
 
         .harga {
-    /* Warna harga diubah jadi pink/ungu neon biar nyala di background gelap */
             color: #f472b6; 
             font-weight: bold;
-            font-size: 1.3em;
+            font-size: 1.4em;
             margin-top: auto; 
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
+
         .btn-ig {
             background: linear-gradient(45deg, #818cf8, #c084fc);
             color: white;
             text-decoration: none;
             padding: 12px;
-            border-radius: 8px;
+            border-radius: 10px;
             text-align: center;
             font-weight: bold;
             transition: 0.3s;
@@ -167,59 +173,8 @@
             filter: brightness(1.2);
             box-shadow: 0 0 15px rgba(192, 132, 252, 0.6);
         }
-
-        .nav-categories {
-            background: rgba(30, 41, 59, 0.5);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: #94a3b8;
-        }
     </style>
 </head>
-<script>
-function cariProduk() {
-    // Ambil teks dari kolom pencarian dan jadikan huruf kecil
-    let input = document.getElementById('searchInput').value.toLowerCase();
-    
-    // Ambil semua kartu produk
-    let kartu = document.getElementsByClassName('card');
-
-    // Loop/periksa setiap kartu
-    for (let i = 0; i < kartu.length; i++) {
-        // Ambil judul produk (h3) di dalam kartu tersebut
-        let namaProduk = kartu[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-        
-        // Jika nama produk mengandung kata yang diketik, tampilkan. Jika tidak, sembunyikan.
-        if (namaProduk.includes(input)) {
-            kartu[i].style.display = "";
-        } else {
-            kartu[i].style.display = "none";
-        }
-    }
-}
-
-// Fitur tambahan: Bisa cari hanya dengan menekan tombol "Enter" di keyboard
-document.getElementById("searchInput").addEventListener("keyup", function(event) {
-    if (event.key === "Enter") {
-        cariProduk();
-    }
-});
-function filterKategori(kategori) {
-    let kartu = document.getElementsByClassName('card');
-
-    for (let i = 0; i < kartu.length; i++) {
-        // Ambil label kategori dari masing-masing kartu
-        let kategoriProduk = kartu[i].getAttribute('data-category');
-
-        // Jika pilih 'all', tampilkan semua. 
-        // Jika tidak, tampilkan hanya yang kategorinya cocok.
-        if (kategori === 'all' || kategoriProduk === kategori) {
-            kartu[i].style.display = "";
-        } else {
-            kartu[i].style.display = "none";
-        }
-    }
-}
-</script>
 <body>
 
 <header>
@@ -232,12 +187,12 @@ function filterKategori(kategori) {
 </header>
 
 <div class="nav-categories">
-    <span onclick="filterKategori('all')" style="cursor:pointer">All</span> &nbsp; | &nbsp;
-    <span onclick="filterKategori('smartphone')" style="cursor:pointer">Smartphone</span> &nbsp; | &nbsp;
-    <span onclick="filterKategori('tablet')" style="cursor:pointer">Tablet</span> &nbsp; | &nbsp;
-    <span onclick="filterKategori('laptop')" style="cursor:pointer">Laptop</span> &nbsp; | &nbsp;
-    <span onclick="filterKategori('accessories')" style="cursor:pointer">Accessories</span> &nbsp; | &nbsp;
-    <span onclick="filterKategori('audio')" style="cursor:pointer">Audio</span>
+    <span onclick="filterKategori('all')">All</span> | 
+    <span onclick="filterKategori('smartphone')">Smartphone</span> | 
+    <span onclick="filterKategori('tablet')">Tablet</span> | 
+    <span onclick="filterKategori('laptop')">Laptop</span> | 
+    <span onclick="filterKategori('accessories')">Accessories</span> | 
+    <span onclick="filterKategori('audio')">Audio</span>
 </div>
 
 <div class="container">
@@ -249,7 +204,7 @@ function filterKategori(kategori) {
                 <h3>Tecno Pova 7 Curve 5G</h3>
                 <p>Chipset MediaTek Dimensity 7500 5G dengan Fitur Game Space</p>
                 <p class="harga">Rp 4.999.000</p>
-                <a href="https://www.instagram.com/_nilawtt?utm_source=qr&igsh=ZDJra2NlMjdyY3ls" class="btn-ig">Cek Produk</a>
+                <a href="https://www.instagram.com/_nilawtt" class="btn-ig">Cek Produk</a>
             </div>
         </div>
 
@@ -286,5 +241,37 @@ function filterKategori(kategori) {
     </div>
 </div>
 
+<script>
+function cariProduk() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let kartu = document.getElementsByClassName('card');
+    for (let i = 0; i < kartu.length; i++) {
+        let namaProduk = kartu[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+        if (namaProduk.includes(input)) {
+            kartu[i].style.display = "";
+        } else {
+            kartu[i].style.display = "none";
+        }
+    }
+}
+
+document.getElementById("searchInput").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        cariProduk();
+    }
+});
+
+function filterKategori(kategori) {
+    let kartu = document.getElementsByClassName('card');
+    for (let i = 0; i < kartu.length; i++) {
+        let kategoriProduk = kartu[i].getAttribute('data-category');
+        if (kategori === 'all' || kategoriProduk === kategori) {
+            kartu[i].style.display = "";
+        } else {
+            kartu[i].style.display = "none";
+        }
+    }
+}
+</script>
 </body>
 </html>
